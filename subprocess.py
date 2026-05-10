@@ -12,7 +12,7 @@ def copy_move() -> str:
     dir2 = input("dir2: ")
     result = subprocess.run(["rclone", f"{cmd}", f"{dir1}", f"{dir2}", "--progress", "--ignore-existing"], capture_output=True, text=True)
     return result
-
+'''
 def buscar(salida) -> int:
     opciones = {}
     matches = re.findall(r'(\d+)\s+/\s+(.+)', salida)
@@ -24,6 +24,7 @@ def buscar(salida) -> int:
         
     eleccion = input("Cual quieres: ")
     return opciones[eleccion]
+'''
 
 def config():
     nombre = input("Nombre del repositorio: ")
