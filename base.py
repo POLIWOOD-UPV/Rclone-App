@@ -17,14 +17,25 @@ B_Config=PushButton(Aplicacion,text="Config",command=lambda:cambio_ventana(W_Con
 Box(Aplicacion,height=15,grid=[1,2])
 B_Copy_Move=PushButton(Aplicacion,text="Copy/Move",command=lambda:cambio_ventana(W_Copy_Move,Aplicacion),width=15,grid=[1,3])
 Box(Aplicacion,height=30,grid=[1,4])
-B_cierre=PushButton(Aplicacion,text="Cerrar programa",align="bottom",command=cierre_programa,grid=[1,5])
+B_cierre=PushButton(Aplicacion,text="Cerrar programa",command=cierre_programa,grid=[1,5])
 
 
-W_Config=Window(Aplicacion,visible=False)
-B_Volver_cnf=PushButton(W_Config,text="Inicio", command=lambda: cambio_ventana(Aplicacion,W_Config),align="bottom")
+W_Config=Window(Aplicacion,title="Config",visible=False,width=700)
+Bx_Config=Box(W_Config,layout="grid")
+Bx_Config.tk.columnconfigure(0, weight=1)
+Bx_Config.tk.columnconfigure(1, weight=0, minsize=200)
+Bx_Config.tk.columnconfigure(2, weight=1)
+Config_box_izq=Box(Bx_Config,layout="grid", grid=[0,0])
+Config_box_der=Box(Bx_Config,layout="grid", grid=[2,0])
+T_nombre_repo=Text(Config_box_izq,text="Nombre del repositorio",grid=[0,0],align="left")
+Tb_nombre_repo=TextBox(Config_box_izq,grid=[1,0],align="left",width=30)
+T_url=Text(Config_box_izq,text="Direccion del sharepoint",grid=[0,1],align="left")
+Tb_url=TextBox(Config_box_izq,grid=[1,1],align="left",width=30)
+T_prueba=Text(Config_box_der,text="Texto de prueba",grid=[1,2],align="left")
+B_volvel_config=PushButton(W_Config,text="Inicio",align="bottom",command=lambda: cambio_ventana(Aplicacion,W_Config))
 
-W_Copy_Move=Window(Aplicacion,title="Copy/Move",visible=False)
-B_Volver_CM=PushButton(W_Copy_Move,text="Inicio",command=lambda: cambio_ventana(Aplicacion,W_Copy_Move),align="bottom")
+W_Copy_Move=Window(Aplicacion,title="Copy/Move",visible=False,layout="grid")
+B_Volver_CM=PushButton(W_Copy_Move,text="Inicio",command=lambda: cambio_ventana(Aplicacion,W_Copy_Move),align="bottom",grid=[0,2])
 
 
 
