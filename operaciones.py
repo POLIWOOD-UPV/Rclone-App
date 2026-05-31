@@ -30,6 +30,12 @@ def config(nombre, url) -> None:
     
     print(salida)
     
+    if salida.returncode == 0:
+        return True
+    else:
+        return False
+    
+    
     '''
     comando.stdin.write("n\n")
     comando.stdin.flush()

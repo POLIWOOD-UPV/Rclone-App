@@ -7,6 +7,12 @@ def cambio_ventana(ventana_abrir,ventana_cerrar):
 
 def cierre_programa():
     Aplicacion.after(1500,Aplicacion.destroy)
+    
+def anadir_repo(nombre_r, url_r):
+    if config(nombre_r,url_r):
+        info(title="Exito", text="Se ha añadido se repositorio. Cierre la ventana de su navegador para terminar el proceso")
+    else:
+        info(title="Fallo", text="Algo ha ocurrido y no se ha añadido el repositorio")
 
 Aplicacion= App(title="Rclone visual",layout="grid",width=400,height=500)
 Aplicacion.tk.columnconfigure(0, weight=1)
@@ -32,7 +38,7 @@ T_nombre_repo=Text(Config_box_izq,text="Nombre del repositorio",grid=[0,0],align
 Tb_nombre_repo=TextBox(Config_box_izq,grid=[1,0],align="left",width=30)
 T_url=Text(Config_box_izq,text="Direccion del sharepoint",grid=[0,1],align="left")
 Tb_url=TextBox(Config_box_izq,grid=[1,1],align="left",width=30)
-B_anadir_repo=PushButton(Config_box_izq, text="Añadir repos.", grid=[0,2], command=lambda:config(Tb_nombre_repo.value, Tb_url.value))
+B_anadir_repo=PushButton(Config_box_izq, text="Añadir repos.", grid=[0,2], command=lambda:anadir_repo(Tb_nombre_repo.value, Tb_url.value))
 T_prueba=Text(Config_box_der,text="Texto de prueba",grid=[1,2],align="left")
 B_volvel_config=PushButton(W_Config,text="Inicio",align="bottom",command=lambda: cambio_ventana(Aplicacion,W_Config))
 
