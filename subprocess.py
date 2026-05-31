@@ -6,10 +6,7 @@ if shutil.which("rclone") is None:
 
 opciones: str = input("¿Qué quieres hacer? (config/copy-move): ")
 
-def copy_move() -> str:
-    cmd = input("Que quieres hacer (copy/move): ")
-    dir1 = input("dir 1: ")
-    dir2 = input("dir2: ")
+def copy_move(cmd, dir1, dir2) -> str:
     result = subprocess.run(["rclone", f"{cmd}", f"{dir1}", f"{dir2}", "--progress", "--ignore-existing"], capture_output=True, text=True)
     return result
 '''
@@ -26,10 +23,8 @@ def buscar(salida) -> int:
     return opciones[eleccion]
 '''
 
-def config():
-    nombre = input("Nombre del repositorio: ")
+def config(nombre, url) -> None:
     numero = 42
-    url = input("Direccion del sharepoint: ")
     comando = subprocess.Popen(['rclone','config'], stdin=subprocess.PIPE, stdout=subprocess.PIPE,stderr=subprocess.PIPE, text=True)
     salida,errores = comando.communicate(input=f"n\n{nombre}\n{numero}\n\n\n\n\n\n\n3\n{url}\n2\n\n\n")
     #El 2 depende del sharepoint, 1 si es uno normal y 2 si es una personalizado
