@@ -4,7 +4,6 @@ import subprocess
 if shutil.which("rclone") is None:
     print("rclone no está instalado o no está en PATH")
 
-
 def copy_move(cmd, dir1, dir2) -> str:
     result = subprocess.run(["rclone", cmd, f"{dir1}", f"{dir2}", "--progress", "--ignore-existing"], capture_output=True, text=True)
     return result
