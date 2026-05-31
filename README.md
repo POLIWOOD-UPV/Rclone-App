@@ -24,3 +24,6 @@ En esta ventana podras mover los archivos entre distintos dispositivos y Sharepo
 
 Para hacerlo tendras que copiar las dos direcciones que necesites, la primera sera desde donde se copiran o moveran los archivos y la segunda seran hacia donde se guardaran.
 Ten en cuenta que la accion "Move" elimina el archivo tras la accion, por lo que se elimina de la carpeta original.
+
+Si no quieres abrir el cmd para copiar la ruta de una carpeta de Sharepoint puedes hacerlo de forma manual de la siguiente manera:
+Nombre repositorio: Ruta/Carpeta/Carpeta1/Carpeta2
