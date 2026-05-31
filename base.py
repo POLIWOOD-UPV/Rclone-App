@@ -10,9 +10,9 @@ def cierre_programa():
     
 def anadir_repo(nombre_r, url_r):
     if config(nombre_r,url_r):
-        info(title="Exito", text="Se ha añadido se repositorio. Cierre la ventana de su navegador para terminar el proceso")
+        info("Exito", "Se ha añadido se repositorio. Cierre la ventana de su navegador para terminar el proceso")
     else:
-        info(title="Fallo", text="Algo ha ocurrido y no se ha añadido el repositorio")
+        info("Fallo", "Algo ha ocurrido y no se ha añadido el repositorio")
 
 Aplicacion= App(title="Rclone visual",layout="grid",width=400,height=500)
 Aplicacion.tk.columnconfigure(0, weight=1)
