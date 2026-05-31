@@ -6,7 +6,7 @@ if shutil.which("rclone") is None:
 
 
 def copy_move(cmd, dir1, dir2) -> str:
-    result = subprocess.run(["rclone", f"{cmd}", f"{dir1}", f"{dir2}", "--progress", "--ignore-existing"], capture_output=True, text=True)
+    result = subprocess.run(["rclone", cmd, f"{dir1}", f"{dir2}", "--progress", "--ignore-existing"], capture_output=True, text=True)
     return result
 '''
 def buscar(salida) -> int:

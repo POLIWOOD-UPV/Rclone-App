@@ -42,8 +42,23 @@ B_anadir_repo=PushButton(Config_box_izq, text="Añadir repos.", grid=[0,2], comm
 T_prueba=Text(Config_box_der,text="Texto de prueba",grid=[1,2],align="left")
 B_volvel_config=PushButton(W_Config,text="Inicio",align="bottom",command=lambda: cambio_ventana(Aplicacion,W_Config))
 
-W_Copy_Move=Window(Aplicacion,title="Copy/Move",visible=False,layout="grid")
-B_Volver_CM=PushButton(W_Copy_Move,text="Inicio",command=lambda: cambio_ventana(Aplicacion,W_Copy_Move),align="bottom",grid=[0,2])
+W_Copy_Move=Window(Aplicacion,title="Copy/Move",visible=False, width=600)
+Text(W_Copy_Move,"""IMPORTANTE. 
+     Si la direccion pertenece a tu equipo local, puede escribirse tal cual. 
+     Si la direccion pertenece a un servidor web, debe escribirse entre comillas.""")
+Text(W_Copy_Move,text=" ")
+T_dir1=Text(W_Copy_Move,text="Direccion de donde estan los archivos")
+Tb_dir1=TextBox(W_Copy_Move, width=50)
+Text(W_Copy_Move,text=" ")
+T_dir2=Text(W_Copy_Move,text="Direccion hacia donde copiar/mover")
+Tb_dir2=TextBox(W_Copy_Move,width=50)
+Text(W_Copy_Move,text=" ")
+Bx_cm=Box(W_Copy_Move,layout="grid")
+B_copy=PushButton(Bx_cm, text="Copiar",width=15, command=lambda: copy_move("copy", Tb_dir1.value, Tb_dir2.value),grid=[0,0])
+Text(Bx_cm,text="   ",grid=[1,0])
+B_move=PushButton(Bx_cm, text="Mover",width=15, command=lambda: copy_move("move", Tb_dir1.value, Tb_dir2.value),grid=[2,0])
+
+B_Volver_CM=PushButton(W_Copy_Move,text="Inicio",command=lambda: cambio_ventana(Aplicacion,W_Copy_Move),align="bottom")
 
 
 
