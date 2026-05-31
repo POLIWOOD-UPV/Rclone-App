@@ -4,7 +4,6 @@ import subprocess
 if shutil.which("rclone") is None:
     print("rclone no está instalado o no está en PATH")
 
-opciones: str = input("¿Qué quieres hacer? (config/copy-move): ")
 
 def copy_move(cmd, dir1, dir2) -> str:
     result = subprocess.run(["rclone", f"{cmd}", f"{dir1}", f"{dir2}", "--progress", "--ignore-existing"], capture_output=True, text=True)
@@ -46,15 +45,6 @@ def config(nombre, url) -> None:
 
     https://upvedues.sharepoint.com/sites/HastaAcabarEstoCopias
     '''
-
-if opciones == "config":
-    config()
-elif opciones == "copy-move":
-    result = copy_move()
-    print(result.stout)
-
-else:
-    print("La opción no es correcta")
 
 
 '''print(result.stdout) #Captura de salida

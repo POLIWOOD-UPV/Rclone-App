@@ -1,4 +1,5 @@
 from guizero import *
+from operaciones import *
 
 def cambio_ventana(ventana_abrir,ventana_cerrar):
     ventana_cerrar.hide()
@@ -31,6 +32,7 @@ T_nombre_repo=Text(Config_box_izq,text="Nombre del repositorio",grid=[0,0],align
 Tb_nombre_repo=TextBox(Config_box_izq,grid=[1,0],align="left",width=30)
 T_url=Text(Config_box_izq,text="Direccion del sharepoint",grid=[0,1],align="left")
 Tb_url=TextBox(Config_box_izq,grid=[1,1],align="left",width=30)
+B_anadir_repo=PushButton(Bx_Config, text="Añadir repos.", command=lambda:config(Tb_nombre_repo.value, Tb_url.value))
 T_prueba=Text(Config_box_der,text="Texto de prueba",grid=[1,2],align="left")
 B_volvel_config=PushButton(W_Config,text="Inicio",align="bottom",command=lambda: cambio_ventana(Aplicacion,W_Config))
 
