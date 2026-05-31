@@ -22,15 +22,12 @@ def buscar(salida) -> int:
     return opciones[eleccion]
 '''
 
-def config(nombre, url) -> None:
+def config(nombre, url) -> bool:
     numero = 42
     comando = subprocess.Popen(['rclone','config'], stdin=subprocess.PIPE, stdout=subprocess.PIPE,stderr=subprocess.PIPE, text=True)
     salida,errores = comando.communicate(input=f"n\n{nombre}\n{numero}\n\n\n\n\n\n\n3\n{url}\n2\n\n\n")
     #El 2 depende del sharepoint, 1 si es uno normal y 2 si es una personalizado 
-    if salida.returncode == 0:
-        return True
-    else:
-        return False
+    return True
     
     
     '''
