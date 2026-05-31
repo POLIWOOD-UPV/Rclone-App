@@ -6,10 +6,10 @@ Asegurate de tener instalado Rclone y añadirlo al Path de tu dispositivo.
 
 Si no sabes como añadirlo al Path aqui tienes una guia:
 
-1- Abre "Editar las variables de entorno del sistema"
-2- Presiona el boton de "variables de entorno" al final de la pantalla
-3- Dale doble click al nombre "Path"
-4- Presiona el boton "Nuevo" y copia la ruta en la que se encuentra tu version de Rclone
+1- Abre "Editar las variables de entorno del sistema"  
+2- Presiona el boton de "variables de entorno" al final de la pantalla  
+3- Dale doble click al nombre "Path"  
+4- Presiona el boton "Nuevo" y copia la ruta en la que se encuentra tu version de Rclone  
 
 Si necesitas mas ayuda para la instalacion visita el PDF informativo que se encuentra en el Sharepoint de Poliwood
 
